@@ -6,6 +6,7 @@ import org.gitlab4j.api.utils.JacksonJson;
 import org.gitlab4j.api.utils.JacksonJsonEnumHelper;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Environment implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -38,6 +39,7 @@ public class Environment implements Serializable {
     private String tier;
     private EnvironmentState state;
     private Deployment lastDeployment;
+    private Date autoStopAt;
 
     public Long getId() {
 	return id;
@@ -93,6 +95,14 @@ public class Environment implements Serializable {
 
     public void setLastDeployment(Deployment lastDeployment) {
 	this.lastDeployment = lastDeployment;
+    }
+
+    public Date getAutoStopAt() {
+        return autoStopAt;
+    }
+
+    public void setAutoStopAt(Date autoStopAt) {
+        this.autoStopAt = autoStopAt;
     }
 
     @Override
